@@ -1,0 +1,111 @@
+.instagram-container
+{
+	width: 500px;
+	height: 500px;
+	overflow-y: scroll;
+	font-family: arial;
+	
+}
+
+.instagram-top-bar
+{
+	width: 450px;
+	background-color: #dbf4fa;
+	height: 50px;
+	font-family: arial;
+	color:#3c3636;
+}
+
+.instagram-title
+{
+	float: left;
+	height: 50px;
+}
+
+.instagram div#instagram-icon
+{
+	float: left;
+}
+
+.instagram-title img
+{
+	width: 45px;
+	height: 45px;
+}
+
+.instagram-title div#instagram-title
+{
+	font-size: 18pt;
+	float: right;
+	margin: 10px 2px
+}
+
+.instagram-layout-options
+{
+	float: right;
+	margin: 15px 10px 0 0;
+}
+
+.instagram-layout-options a
+{
+	width:18px;
+	height: 18px;
+	display:inline-block;
+	border-radius: 2px;
+	cursor: pointer;
+	text-decoration: none;
+	
+}
+
+.instagram-layout-options a.grid
+{
+	background: url( ../images/Timeline-List-Grid-Grid-icon.png) no-repeat;
+	background-size: contain;
+
+}
+
+.instagram-layout-options a.active
+{
+	background-color: #f055bd
+}
+
+.instagram-layout-options a.list
+{
+	background: url( ../images/Timeline-List-Grid-List-icon.png) no-repeat;
+	background-size: contain;
+}
+
+.instagram-container ul
+{
+	padding: 0;
+}
+
+.instagram-container li
+{
+	list-style: none;
+}
+
+
+
+#instagram-list li 
+{
+	margin-top: 5px;
+	width: 450px;
+	color: #7d7d7d;
+}
+
+#instagram-list li:nth-child(2n) 
+{
+	background-color: #dbf4fa;
+}
+
+#instagram-list li div
+{
+	padding-top: 2px;
+	
+}
+
+#instagram-list li img
+{
+	margin-right: 10px;
+}

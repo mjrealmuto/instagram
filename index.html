@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-us" ng-app="instagramPhotos" ng-controller="instagramPhotosController">
+<head>
+	<link rel='stylesheet' href='/test/instagram/css/instagram.css' />
+	<link rel="stylesheet" href="/sharedcode/js/colorbox-master/example4/colorbox.css" />
+	<script type="text/javascript" src="/test/angular/js/angular.min.js"></script>
+	<script type="text/javascript" src="/test/angular/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src="/test/instagram/js/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="/test/instagram/js/filters.js"></script>
+	<script type="text/javascript" src="/test/instagram/js/app.js"></script>
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/sharedcode/js/colorbox-master/jquery.colorbox-min.js"></script>
+	
+	<script type="text/javascript">
+		
+	</script>
+
+</head>
+<body>
+<div class='instagram-top-bar'>
+	<div class='instagram-title'>
+		<table><tr><td><div id='instagram-icon'></div><img src='/test/instagram/images/Instagram-icon.png' align='left'/></div></td> <td><div id='instagram-title'>Eric & Kathy's Instagram</div></td></tr></table>
+	</div>
+	<div class='instagram-layout-options'>
+		<a  class="grid" ng-click="layout = 'grid'" ng-class="{active: layout == 'grid'}"></a> 
+		&nbsp; 
+		<a  class="list" ng-click="layout = 'list'" ng-class="{active: layout == 'list'}"></a>
+	</div>
+</div>
+
+<div class='instagram-container'>
+	<ul id='instagram-grid' ng-show="layout == 'grid'">
+		
+		<li ng-repeat="post in posts.data">
+			<a ng-href="{{post.images.standard_resolution.url}}" class='instagram-grid-photo colorbox' >
+				<img ng-src="{{post.images.thumbnail.url}}" align='left' />
+			</a>
+		</li>
+	</ul>
+	
+	<ul id='instagram-list' ng-show="layout == 'list'">
+		<li ng-repeat="post in posts.data" style='width: 450px; height: 150px;'>
+			<div>
+				<a ng-href="{{post.images.standard_resolution.url}}" class='instagram-list-photo colorbox' >
+					<img ng-src="{{post.images.thumbnail.url}}" align='left' ng-bind-html='post.caption.text | userLink' />
+				</a>
+				<div ng-bind-html="post.caption.text | userLink"></div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+</body>
+
+</html>
